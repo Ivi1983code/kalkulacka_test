@@ -1,3 +1,6 @@
+class CustomException(Exception):
+    pass
+
 def kalkulacka():
     try:
         cislo1 = float(input("Zadajte prve cislo: "))
@@ -18,7 +21,7 @@ def kalkulacka():
     elif operacia == "-":
         vysledok = cislo1 - cislo2
     elif operacia == "*":
-        vysledok = cislo1 * cislo2
+        raise CustomException("Jedná sa o vyvolanú výnimku")
     elif operacia == "/":
         try:
             vysledok = cislo1 / cislo2
@@ -31,4 +34,7 @@ def kalkulacka():
 
     return vysledok
 
-print(f"Vysledok: {kalkulacka()}")
+try:
+    print(f"Vysledok: {kalkulacka()}")
+except CustomException as e:
+    print(e)
