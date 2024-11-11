@@ -18,8 +18,10 @@ def kalkulacka():
 
     if operacia == "+":
         vysledok = cislo1 + cislo2
+        raise CustomException("Jedná sa o vyvolanú výnimku")
     elif operacia == "-":
         vysledok = cislo1 - cislo2
+        raise CustomException("Jedná sa o vyvolanú výnimku")
     elif operacia == "*":
         raise CustomException("Jedná sa o vyvolanú výnimku")
     elif operacia == "/":
