@@ -10,8 +10,15 @@ def kalkulacka():
     elif operacia == "*":
         vysledok = cislo1 * cislo2
     elif operacia == "/":
-        vysledok = cislo1 / cislo2
+        try:
+            vysledok = cislo1 / cislo2
+        except ZeroDivisionError:
+            print("Chcel si deliť nulou a to nejde.")
+            return None
+    else:
+        print("Neplatná operácia.")
+        return None
 
-    return  vysledok
+    return vysledok
 
-print(f"Vysledok:{kalkulacka()}")
+print(f"Vysledok: {kalkulacka()}")
