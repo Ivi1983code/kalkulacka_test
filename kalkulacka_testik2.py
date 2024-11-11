@@ -1,7 +1,17 @@
 def kalkulacka():
-    cislo1 = float(input("Zadajte prve cislo: "))
+    try:
+        cislo1 = float(input("Zadajte prve cislo: "))
+    except ValueError:
+        print("Písmená sa tam nesmú zadávať, zadajte číslo.")
+        return None
+
     operacia = input("Zadajte operaciu (+, -, *, /): ")
-    cislo2 = float(input("Zadajte druhe cislo: "))
+
+    try:
+        cislo2 = float(input("Zadajte druhe cislo: "))
+    except ValueError:
+        print("Písmená sa tam nesmú zadávať, zadajte číslo.")
+        return None
 
     if operacia == "+":
         vysledok = cislo1 + cislo2
